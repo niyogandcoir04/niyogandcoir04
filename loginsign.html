@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login - Niyog & Coir</title>
+<link rel="stylesheet" href="style.css">
+
+
+
+<style>
+   body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     background: var(--cream);
+   }
+
+   .login-container {
+     width: 400px;
+     background: white;
+     padding: 30px;
+     border-radius: 20px;
+     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+   }
+
+
+   h2 {
+
+     text-align: center;
+     margin-bottom: 20px;
+     font-family: 'Cormorant Garamond', serif;
+   }
+
+
+   input {
+     width: 100%;
+     padding: 10px;
+     margin: 8px 0;
+     border-radius: 10px;
+     border: 1px solid #ccc;
+   }
+
+   button {
+     width: 100%;
+     padding: 10px;
+     margin-top: 10px;
+     border: none;
+     border-radius: 20px;
+     background: var(--coir-dark);
+     color: white;
+     cursor: pointer;
+   }
+   .toggle {
+     text-align: center;
+     margin-top: 10px;
+     cursor: pointer;
+     color: var(--coir-brown);
+     font-size: 13px;
+   }
+
+</style>
+
+</head>
+
+
+<body>
+<div class="login-container">
+
+
+
+<div id="loginForm">
+<h2>Login</h2>
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button onclick="loginUser()">Login</button>
+<div class="toggle" onclick="showSignup()">
+     Don't have an account? Sign up
+</div>
+</div>
+
+<div id="signupForm" style="display:none;">
+<h2>Sign Up</h2>
+<input type="text" placeholder="Complete Name">
+<input type="text" placeholder="Address">
+<input type="text" placeholder="Mobile Number">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<input type="password" placeholder="Confirm Password">
+<button onclick="signupUser()">Create Account</button>
+<div class="toggle" onclick="showLogin()">
+     Already have an account? Login
+</div>
+</div>
+</div>
+
+<script>
+  function showSignup() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signupForm").style.display = "block";
+  }
+
+  function showLogin() {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+  }
+
+  function loginUser() {
+    alert("Logged in successfully!");
+    window.location.href = "home.html"; 
+  }
+
+  function signupUser() {
+    alert("Account created!");
+    window.location.href = "home.html"; 
+  }
+</script>
+
+</body>
+</html>
